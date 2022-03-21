@@ -63,27 +63,48 @@ public class PlayerData
     /// Permet d'identifier les actions à réaliser lors d'un gameover
     /// </summary>
     public System.Action Gameover;
+    /// <summary>
+    /// Permet d'identifier les niveaux complétés
+    /// </summary>
+    private bool[] _niveauxFaits;
+
+    /// <summary>
+    /// Permet d'identifier les potions ramassés
+    /// </summary>
+    private bool[] _potionsRamassés;
+
+    /// <summary>
+    /// Permet d'identifier les GREENGoos ramassés
+    /// </summary>
+    private bool[] _greenGoosRamassés;
 
     public int Energie { get { return this._energie; } }
     public int Vie { get { return this._vie; } }
     public int Score { get { return this._score; } }
     public string[] ListeCoffreOuvert { get { return this._chestOpenList.ToArray(); } }
+    public bool[] NiveauxFaits { get => _niveauxFaits; set => _niveauxFaits = value; }
+    public bool[] PotionsRamassés { get => _potionsRamassés; set => _potionsRamassés = value; }
+    public bool[] GreenGoosRamassés { get => _greenGoosRamassés; set => _greenGoosRamassés = value; }
 
     public PlayerData()
     {
-        this._vie = 0;
-        this._energie = 0;
+        this._vie = 3;
+        this._energie = 5;
         this._score = 0;
-        this._volumeGeneral = 0;
-        this._volumeMusique = 0;
-        this._volumeEffet = 0;
+        this._volumeGeneral = 5;
+        this._volumeMusique = 5;
+        this._volumeEffet = 5;
         this.UIPerteEnergie = null;
         this.UIPerteVie = null;
         this.Gameover = null;
         this._chestOpenList = new List<string>();
+        this.NiveauxFaits = new bool[3];
+        this.GreenGoosRamassés = new bool[6];
+        this.PotionsRamassés = new bool[14];
+       
     }
 
-    public PlayerData(int vie = 1, int energie = 2, int score = 0,
+    public PlayerData( int vie = 1, int energie = 2, int score = 0,
         float volumeGeneral = 0, float volumeMusique = 0, float volumeEffet = 0,
         System.Action uiPerteEnergie = null, System.Action uiPerteVie = null,
         System.Action gameOver = null, List<string> ChestList = null)
@@ -100,6 +121,10 @@ public class PlayerData
         this._chestOpenList = new List<string>();
         if (ChestList != null)
             this._chestOpenList = ChestList;
+        this.NiveauxFaits = new bool[3];
+        this.GreenGoosRamassés = new bool[6];
+        this.PotionsRamassés = new bool[14];
+
     }
 
     /// <summary>

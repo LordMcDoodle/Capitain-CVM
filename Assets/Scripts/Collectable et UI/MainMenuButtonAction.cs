@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuButtonAction : MonoBehaviour
 {
+
     /// <summary>
     /// Permet d'afficher un panel transmis en paramètre
     /// </summary>

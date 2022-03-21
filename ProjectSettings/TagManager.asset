@@ -8,6 +8,9 @@ TagManager:
   - Ennemy
   - Plateform
   - Tilemap Water
+  - BigSlimey
+  - MediumSlimey
+  - SmallSlimey
   layers:
   - Default
   - TransparentFX

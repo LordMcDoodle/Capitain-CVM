@@ -20,7 +20,7 @@ public static class PlayerDataJson
         json += tab + "\"score\":" + data.Score + "," + newline;
         json += tab + "\"volumeGeneral\":" + data.VolumeGeneral.ToString().Replace(',', '.') + "," + newline; 
         json += tab + "\"volumeMusique\":" + data.VolumeMusique.ToString().Replace(',', '.') + "," + newline; 
-        json += tab + "\"volumeEffet\":" + data.VolumeEffet.ToString().Replace(',', '.') + "," + newline; 
+        json += tab + "\"volumeEffet\":" + data.VolumeEffet.ToString().Replace(',', '.') + "," + newline;
         json += tab + "\"chestOpenList\":[";
         if (data.ListeCoffreOuvert.Length > 0)
         {
@@ -60,6 +60,9 @@ public static class PlayerDataJson
 
         int vie = 0, energie = 0, score = 0;
         float vlmGeneral = 0, vlmMusique = 0, vlmEffet = 0;
+        List<bool> niveauxFaits = new List<bool>();
+        List<bool> greenGoosRamassés = new List<bool>();
+        List<bool> potionsRamassés = new List<bool>();
         List<string> chests = new List<string>();
         string[] lignes = json.Split('\n');
         
